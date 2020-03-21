@@ -11,11 +11,12 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-      - name: Build dict
+      - name: Set up Python
         uses: actions/setup-python@v1
         with:
           python-version: '3.x' # Version range or exact version of a Python version to use, using SemVer's version range syntax
           architecture: 'x64' # optional x64 or x86. Defaults to x64 if not specified
+      - name: Make dictionary
         run: |
           python skk2migemo.py dict/SKK-JISYO.L migemo-dict
           zip -9 migemo-dict migemo-dict
