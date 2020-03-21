@@ -16,9 +16,9 @@ jobs:
         with:
           python-version: '3.x' # Version range or exact version of a Python version to use, using SemVer's version range syntax
           architecture: 'x64' # optional x64 or x86. Defaults to x64 if not specified
-        run:
-          - python skk2migemo.py dict/SKK-JISYO.L migemo-dict
-          - zip -9 migemo-dict migemo-dict
+        run: |
+          python skk2migemo.py dict/SKK-JISYO.L migemo-dict
+          zip -9 migemo-dict migemo-dict
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
